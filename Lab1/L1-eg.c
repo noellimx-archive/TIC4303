@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 void do_reverse(void)
-{
+{	
+	printf("[eg] do reverse");
 	int l, i, c;
 	char *p;
 
