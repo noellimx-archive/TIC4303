@@ -1,0 +1,1 @@
+gcc -c <cppfile> -o <out>
