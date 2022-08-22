@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>A brief tutorial on how to measure the memory used by malloc.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="A_brief_tutorial_on_how_to_measure_the_memory_used_by_malloc_0"></a>A brief tutorial on how to measure the memory used by malloc</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Written By: Xiao Liang Yu, Roland Yap</p>
+<h2 class="code-line" data-line-start=4 data-line-end=5><a id="Quick_summary_4"></a>Quick summary</h2>
+<p class="has-line-data" data-line-start="5" data-line-end="6"><code>malloc()</code> and <code>free()</code> do not directly give any usage statistics. The default malloc in Linux is implemented in the <code>glibc</code> library and it has builtin hooks to obtain malloc usage statistics. The easiest way to get malloc statistics is with the memusage library, <code>libmemusage.so</code>. It can be used to display various statistics for malloc. For Lab 1, we only look at the maximum heap memory usage, given by <strong>heap peak</strong> in the &quot;<code>Memory usage summary</code>&quot; output by the memusage when the program terminates.</p>
+<p class="has-line-data" data-line-start="7" data-line-end="10">In case, you do not have memusage can be installed by the command<br>
+<code>$ sudo apt install libc6</code><br>
+(however, most likely it has been preinstalled). Note that the <code>$</code> only refers to the shell prompt, you do not type it.</p>
+<p class="has-line-data" data-line-start="11" data-line-end="16">To use memusage, set the environment variable <code>LD_PRELOAD</code> to <code>libmemusage.so</code> before running the program, then execute the program normally. If you are using the (default) Bash shell, this can be conveniently done by the command<br>
+<code>$ LD_PRELOAD=libmemusage.so ./PROGRAM</code><br>
+where <code>./PROGRAM</code> is the path to your executable file. Don’t forget that you can use input redirection, e.g.<br>
+<code>$ LD_PRELOAD=libmemusage.so ./PROGRAM &lt; INPUT</code><br>
+where <code>INPUT</code> is the path to the file containing the input to the program, in Unix, this is called <strong>standard input</strong> (or <code>stdin</code>). When the program terminates, the statistics is output. The following is an example output of memusage (bottom part is not shown) with heap peak of <code>6440</code>, look for the <strong>heap peak</strong>.</p>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="27">Memory usage summary: heap total: 45200, heap peak: 6440, stack peak: 224
+                   total calls  total memory  failed calls
+            malloc|         1           400             0
+           realloc|        40         44800             0  (nomove:40, dec:19, free:0)
+            calloc|         0             0             0
+              free|         1           440
+           Histogram for block sizes:
+           ...
+</code></pre>
+<p class="has-line-data" data-line-start="28" data-line-end="29">NOTE: memusage may not work correctly when the program doesn’t directly call the glibc memory allocation related functions. If you have compiled your program without the use of extra components (e.g. sanitizers), it should work out-of-box. Also note that many other routines use malloc, so malloc may be called indirectly, e.g. the <code>stdio</code> library also uses malloc, which means that malloc usage may be more than apparent in your code.</p>
+<h2 class="code-line" data-line-start=30 data-line-end=31><a id="Introduction_30"></a>Introduction</h2>
+<p class="has-line-data" data-line-start="31" data-line-end="32">All programs use memory but memory is a resource which is not infinite. When a program uses too much memory, it will either be killed by Linux or will run slowly due to excessive paging. Programs usually use dynamic memory from the heap using routines from the malloc library. Profiling the malloc usage can facilitate the undertanding of the programs’ resource demand and the memory-efficiency (also space complexity) of the implemented algorithm. In this lab, we use the <code>memusage</code> library to record and measure the memory usage used by the submissions. <strong>This tutorial is written for the Linux environment, other systems may differ</strong>.</p>
+<h2 class="code-line" data-line-start=33 data-line-end=34><a id="Why_memusage_33"></a>Why memusage?</h2>
+<p class="has-line-data" data-line-start="34" data-line-end="35">Modern operating system (e.g. Ubuntu) comes with resource monitors (e.g. task manager in Windows) that shows the memory usage of the programs. <strong>However, most of them show the memory usage at the operating system level.</strong> This is different from the actual amount requested by the program. For example, one could request 1024 bytes (1KB) of heap memory in C by <code>malloc(1024)</code>, but the actual memory usage can be 4096 bytes (4KB). This is because Linux, at the low-level, allocates memory at the granularity of memory pages (not bytes), on the X86 the smallest page size is 4KB. As your algorithm/code will be working with <em>requested memory size</em>, then memusage will give a clearer picture than what the operating considers as the memory usage. Note that there will be correlation between both sizes.</p>
+<p class="has-line-data" data-line-start="36" data-line-end="37"><strong>memusage</strong> measures the <strong>requested memory size</strong>. For example, consider the following C fragment and its heap usage as seen by memusage right after each execution of statements.</p>
+<pre><code class="has-line-data" data-line-start="38" data-line-end="44" class="language-C"><span class="hljs-keyword">void</span> *p = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">1000</span>); <span class="hljs-comment">// current heap: 1000</span>
+<span class="hljs-built_in">malloc</span>(<span class="hljs-number">2000</span>); <span class="hljs-comment">// current heap: 3000</span>
+<span class="hljs-built_in">free</span>(p); <span class="hljs-comment">// current heap: 2000</span>
+<span class="hljs-keyword">void</span> *p2 = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">3000</span>); <span class="hljs-comment">// current heap: 5000</span>
+<span class="hljs-built_in">free</span>(p2); <span class="hljs-comment">// current heap: 2000</span>
+</code></pre>
+<p class="has-line-data" data-line-start="44" data-line-end="45">The reported heap peak will be the max value of current heap sizes at any point of time. In the example above, the heap peak is 5000.</p>
+<h2 class="code-line" data-line-start=46 data-line-end=47><a id="How_to_use_memusage_46"></a>How to use memusage</h2>
+<p class="has-line-data" data-line-start="47" data-line-end="48">See summary section for a simple usage example</p>
+<h2 class="code-line" data-line-start=49 data-line-end=50><a id="Use_memusage_to_understand_your_program_further_49"></a>Use memusage to understand your program further</h2>
+<p class="has-line-data" data-line-start="50" data-line-end="54">While Lab 1 only focuses on peak malloc heap, memusage outputs various statistics that can aid the understanding of runtime characteristics of programs. Most notably, it outputs number of <code>malloc</code>, <code>realloc</code> and <code>free</code> calls. For <code>malloc</code> and <code>realloc</code>, it gives the distributions of sizes requested per call. This can be useful when you debug your program to understand how memory is being requested and freed. For more details, see the <code>memusage</code> man page. In case, you do not have the man page installed, you can also read<br>
+<a href="https://man7.org/linux/man-pages/man1/memusage.1.html">https://man7.org/linux/man-pages/man1/memusage.1.html</a><br>
+A more detailed example of memusage can be found<br>
+<a href="https://gergap.wordpress.com/2017/01/20/profiling-memory-using-gnu-glibc-tools">here</a></p>
+</body></html>
