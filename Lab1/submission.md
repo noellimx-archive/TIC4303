@@ -15,3 +15,12 @@ linesarealternatedbyinputanditsreverse
 
 - sizeof has no idea of malloc (the programmer controls memory allocation!!!)
 - ```gcc``` flag ```-fsanitize=address``` helps to check for memory leaks during runtime. i.e, if illegal value modification to other variable's or stack's heap memory
+
+
+
+# submission
+
+
+# compile and run
+
+gcc -Wall -fsanitize=address lim-A0211270Y-lab1-ex2.c L1-main.c && echo "linesarealternatedbyinputanditsreverse" | ./a.out
