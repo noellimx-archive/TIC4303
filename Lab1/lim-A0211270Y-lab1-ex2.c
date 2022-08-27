@@ -30,12 +30,19 @@ void do_reverse(void)
 	int size_growth_factor = 2;
 
 	while (1) { // reading
+		if(current_allocated_capacity <= buffered_size){
+			printf("ERROR current [%i] <= buffered [%i] \n" , current_allocated_capacity, buffered_size);
+		}else{
+
+			printf("WARN current [%i] buffered [%i] \n" , current_allocated_capacity, buffered_size);
+			
+		}
 		if((c = getchar()) != '\n'){
 
 			p[buffered_size] = c;
 			buffered_size += 1;
 
-			if ((buffered_size + null_terminator_size) >= current_allocated_capacity){ // space reallocation criteria
+			if ((buffered_size) >= current_allocated_capacity){ // space reallocation criteria
 
 				to_allocate_capacity = current_allocated_capacity * size_growth_factor;
 
