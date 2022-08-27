@@ -8,7 +8,8 @@ it is implied (malloc 256) / (line length =  16) = 16 byte per character
 
 example run
 gcc -Wall -fsanitize=address L1-eg.c L1-main.c && echo "abcdefghijklmnopqrstuvwxyz" | ./a.out
-
+gcc -Wall -fsanitize=address L1-eg.c L1-main.c && echo "linesarealternatedbyinputanditsreverse" | ./a.out
+linesarealternatedbyinputanditsreverse
 
 # Notes
 
