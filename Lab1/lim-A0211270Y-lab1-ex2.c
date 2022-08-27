@@ -20,7 +20,7 @@ void do_reverse(void)
 
 	// re-allocation of space. the next 3 lines are to be executed consecutively to maintain consistency in tracking space of the pointer of interest.
 	to_allocate_capacity = 8;
-	p = (char *) malloc(to_allocate_capacity);
+	p = (char *) malloc(sizeof(char) * to_allocate_capacity);
 	current_allocated_capacity = to_allocate_capacity;
 
 	int null_terminator_size = 1; // size of null-terminator
@@ -40,7 +40,7 @@ void do_reverse(void)
 				to_allocate_capacity = current_allocated_capacity * size_growth_factor;
 
 				char * new_p;
-				new_p = (char *) malloc(to_allocate_capacity);
+				new_p = (char *) malloc(sizeof(char) * to_allocate_capacity);
 				current_allocated_capacity = to_allocate_capacity;
 
 				int buffered_cursor;
