@@ -30,13 +30,6 @@ void do_reverse(void)
 	int size_growth_factor = 2;
 
 	while (1) { // reading
-		if(current_allocated_capacity <= buffered_size){
-			printf("ERROR current [%i] <= buffered [%i] \n" , current_allocated_capacity, buffered_size);
-		}else{
-
-			printf("WARN current [%i] buffered [%i] \n" , current_allocated_capacity, buffered_size);
-			
-		}
 		if((c = getchar()) != '\n'){
 
 			p[buffered_size] = c;
@@ -64,7 +57,6 @@ void do_reverse(void)
 		}
 	}
 
-
 	int j = buffered_size - 1;
 	while (j >= 0){
 		putchar(p[j--]);
@@ -73,6 +65,6 @@ void do_reverse(void)
 		putchar('\n');
 	}
 
-	free(p);
+	free(p); // earned the right to exit
 	return;
 }
