@@ -27,7 +27,7 @@ void do_reverse(void)
 
 	// size mulitplication factor;
 
-	int size_growth_factor = 3;
+	int size_growth_factor = 2;
 
 	while (1) { // reading
 		if(current_allocated_capacity <= buffered_size){
@@ -42,7 +42,7 @@ void do_reverse(void)
 			p[buffered_size] = c;
 			buffered_size += 1;
 
-			if ((buffered_size) >= current_allocated_capacity){ // space reallocation criteria
+			if ((buffered_size + null_terminator_size) >= current_allocated_capacity){ // space reallocation criteria
 
 				to_allocate_capacity = current_allocated_capacity * size_growth_factor;
 
@@ -72,5 +72,7 @@ void do_reverse(void)
 	if (buffered_size > 0){
 		putchar('\n');
 	}
+
+	free(p);
 	return;
 }
