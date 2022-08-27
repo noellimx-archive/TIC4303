@@ -27,7 +27,7 @@ void do_reverse(void)
 
 	// size mulitplication factor;
 
-	int size_growth_factor = 2;
+	int size_growth_factor = 3;
 
 	while (1) { // reading
 		if(current_allocated_capacity <= buffered_size){
