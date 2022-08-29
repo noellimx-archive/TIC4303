@@ -14,12 +14,12 @@ void do_reverse(void)
 	int l, i, c;
 	char *p;
 
-	p = (char *)malloc(sizeof(char *) + 1);
+	p = (char *)malloc(sizeof(char));
 
 	for (i = 0; (c = getchar()) != '\n'; i++)
-	{
-		size_t size = (i + 1) * sizeof(char *);
-
+	{	
+		int elements = (i + 1);
+		size_t size = elements * sizeof(char);
 		populateWithNewPointer(i, c, size, &p);
 	}
 	l = i;
@@ -35,7 +35,7 @@ void do_reverse(void)
 void populateWithNewPointer(int i, int c, size_t size, char **pp)
 {
 	int j;
-	char *ppNew = (char *)malloc(size + 1);
+	char *ppNew = (char *)malloc(size);
 	for (j = 0; j < i; j++)
 	{
 		(ppNew)[j] = (*pp)[j];
