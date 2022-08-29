@@ -9,6 +9,7 @@
 
 void do_reverse(void)
 {	
+	printf("hi");
 	int c; // this character
 	int to_allocate_capacity, current_allocated_capacity; // space awareness MUST be revised by programmer upon space allocation of the pointer.
 

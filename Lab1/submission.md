@@ -24,3 +24,4 @@ linesarealternatedbyinputanditsreverse
 # compile and run
 
 gcc -Wall -fsanitize=address lim-A0211270Y-lab1-ex2.c L1-main.c && echo "linesarealternatedbyinputanditsreverse" | ./a.out
+gcc -Wall -fsanitize=address sim-a0211422b-lab1-ex2.c L1-main.c && echo "linesarealternatedbyinputanditsreverse" | ./a.out
