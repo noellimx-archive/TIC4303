@@ -63,7 +63,7 @@ int main(int argc, char *argv[], char* envp[]){
 	printf("%lu",sizeof(char *));
 	addr(&buf, "addr of ptr to buf");
 	addr(&local, "addr of ptr to local");
-	addr(heap, "addr of heap");
+	addr(&heap, "addr of heap");
 
 
 }
