@@ -58,14 +58,14 @@ int main2(int argc, char *argv[], char *envp[])
 
 int main(int argc, char *argv[], char* envp[]){
 	char first[256], second[16];
-	void *heap;
 	char third[8], fourth[32];
+	void *heap;
 	printf("%lu",sizeof(char *));
-	addr(&first, "addr of first");
-	addr(&second, "addr of second");
-	addr(&third, "addr of third");
-	addr(&fourth, "addr of fourth");
-	addr(&heap, "addr of heap");
+	addr(&first, "addr of first[256]");
+	addr(&second, "addr of second[16]");
+	addr(&third, "addr of third[8]");
+	addr(&fourth, "addr of fourth[32]");
+	addr(&heap, "addr of void heap");
 
 
 }
