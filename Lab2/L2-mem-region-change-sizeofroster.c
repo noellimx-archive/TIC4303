@@ -26,6 +26,7 @@ void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 	addr(local, "f():local");
 }
 
+int main(int , char* [], char* []);
 int main2(int argc, char *argv[], char *envp[])
 {
 	char buf[256], local[16];
