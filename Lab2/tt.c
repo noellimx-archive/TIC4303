@@ -66,6 +66,4 @@ int main(int argc, char *argv[], char* envp[]){
 	addr(&third, "addr of third[8]");
 	addr(&fourth, "addr of fourth[32]");
 	addr(&heap, "addr of void heap");
-
-
 }
