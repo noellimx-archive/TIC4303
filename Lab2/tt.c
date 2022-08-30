@@ -66,4 +66,12 @@ int main(int argc, char *argv[], char* envp[]){
 	addr(&third, "addr of third[8]");
 	addr(&fourth, "addr of fourth[32]");
 	addr(&heap, "addr of void heap");
+
+	char * alpha = (char *) malloc(sizeof(char) * 10);
+	char * beta = (char *) malloc(sizeof(char) * 10);
+	char * charlie = (char *) malloc(sizeof(char) * 10);
+	addr(&alpha, "addr of alpha ");
+	addr(&beta, "addr of beta");
+	addr(&charlie, "addr of charlie");
+
 }
