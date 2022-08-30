@@ -59,8 +59,8 @@ int main2(int argc, char *argv[], char *envp[])
 int main(int argc, char *argv[], char* envp[]){
 	char buf[256], local[16];
 	void *heap;
-	addr(buf, "addr of buf");
-	addr(local, "addr of local");
+	addr(&buf, "addr of ptr to buf");
+	addr(&local, "addr of ptr to local");
 	addr(heap, "addr of heap");
 
 
