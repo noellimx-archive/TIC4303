@@ -26,7 +26,7 @@ void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 	addr(local, "f():local");
 }
 
-int main(int argc, char *argv[], char *envp[])
+int main2(int argc, char *argv[], char *envp[])
 {
 	char buf[256], local[16];
 	void *heap;
@@ -53,4 +53,14 @@ int main(int argc, char *argv[], char *envp[])
 	sprintf(buf, "cat /proc/%d/maps", getpid());
 	system(buf);
 	return 0;
+}
+
+int main(int argc, char *argv[], char* envp[]){
+	char buf[256], local[16];
+	void *heap;
+	addr(buf, "addr of buf");
+	addr(local, "addr of local");
+	addr(heap, "addr of heap");
+
+
 }
