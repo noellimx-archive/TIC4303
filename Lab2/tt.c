@@ -22,6 +22,10 @@ void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 {
 	char local[32];
 	addr(&arg1, "f(arg1)");
+	addr(&arg2, "f(arg2)");
+	addr(&arg3, "f(arg3)");
+	addr(&arg4, "f(arg4)");
+	addr(&arg5, "f(arg5)");
 	addr(&arg6, "f(arg6)");
 	addr(local, "f():local");
 }
@@ -73,5 +77,9 @@ int main(int argc, char *argv[], char* envp[]){
 	addr(&alpha, "addr of alpha ");
 	addr(&beta, "addr of beta");
 	addr(&charlie, "addr of charlie");
+
+	f(1, 2, 3, 4, 5, 6, 7, 8);
+
+
 
 }
