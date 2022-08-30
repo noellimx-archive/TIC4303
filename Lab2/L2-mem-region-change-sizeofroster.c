@@ -60,7 +60,7 @@ int main(int argc, char *argv[], char* envp[]){
 	char buf[256], local[16];
 	void *heap;
 
-	printf("%d",sizeof(char *));
+	printf("%lu",sizeof(char *));
 	addr(&buf, "addr of ptr to buf");
 	addr(&local, "addr of ptr to local");
 	addr(heap, "addr of heap");
