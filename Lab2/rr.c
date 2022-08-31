@@ -53,8 +53,10 @@ int main(int argc, char *argv[], char *envp[])
 	case 5:
 		p = (char *) &choice;
 
-		printf("%i", sizeof(char) == sizeof(int ));
-		printf("%i", sizeof(char *) == sizeof(int *));
+
+
+		printf("s of int and char %i\n", sizeof(char) == sizeof(int ));
+		printf("s of pint and pchar %i\n", sizeof(char *) == sizeof(int *));
 		setvalue(p, 5);
 		break;
 /**
