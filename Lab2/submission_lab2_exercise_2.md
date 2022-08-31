@@ -20,4 +20,7 @@ Segmentation fault (core dumped)
 
 #### b
 
-case 1 has an instruction ```p = 0;``` which reassigns p to 0. We can add ```printf(""``` at the start of 
+Case 1 has an instruction ```p = 0;``` which reassigns p to 0. We can add ```printf("%p",NULL);``` at the start of main to observe that NULL value is also 0. That is, p is assigned to the NULL pointer. Also, address 0x00 is owned by the operating system, not the program. Invoking ```setvalue()```, program will attempt to dereference the NULL pointer ```p``` which is not owned by the program. Hence the segmentation fault.
+
+
+### 2
