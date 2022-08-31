@@ -29,7 +29,7 @@ int main(int argc, char *argv[], char *envp[])
 		break;
 	case 2:
 		p = hello;
-		setvalue(p, 'W');
+		setvalue(p, 'World');
 		break;
 	case 3:
 		p = string;
