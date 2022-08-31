@@ -10,6 +10,8 @@ int glob = 42;
 
 void setvalue(char *p, char v)
 {
+
+	printf("assign value %c to pointer %s", v, p);
 	*p = v;
 }
 
@@ -23,9 +25,11 @@ int main(int argc, char *argv[], char *envp[])
 	if (argc > 1)
 	{
 
-		printf("first arg is %s", argv[1]) ;
+		printf("first arg is %s", argv[1]);
 		choice = atoi(argv[1]);
-	}else {
+	}
+	else
+	{
 		printf("no choice specified\n");
 		return 0;
 	}
