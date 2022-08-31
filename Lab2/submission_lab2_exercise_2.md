@@ -33,8 +33,10 @@ Segmentation fault (core dumped)
 ```p``` is assigned to ```hello``` which is a pointer to a string literal. String literals are static and not modifiable. That is, the character elements in ```hello``` cannot be replaced. However, reading/access is allowed. 
 
 ```
-    *p = 'W'; // illegal, undefined behavior
+
+    *p; // legal
     printf("%c",*p); // legal
+    *p = 'W'; // illegal, undefined behavior
 ```
 
 See[https://en.cppreference.com/w/c/language/string_literal](https://en.cppreference.com/w/c/language/string_literal)

@@ -48,6 +48,8 @@ int main(int argc, char *argv[], char *envp[])
 		break;
 	case 4:
 		p = 0;
+		*p;
+		printf("cannot reach here");
 		choice = *p;
 		break;
 	case 5:
