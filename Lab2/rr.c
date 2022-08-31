@@ -10,18 +10,7 @@ int glob = 42;
 
 void setvalue(char *p, char v)
 {
-	*p;
-
-	printf("--%c\n", v);
-	printf("--%p\n", p);
-	printf("--%c\n", *p);
-	printf("--%c\n", *(p + 1));
-	printf("--%c\n", *(p + 2));
-	printf("--%c\n", *(p + 3));
-	printf("--%c\n", *(p + 4));
-	printf("--%c\n", *(p + 5));
-	// *p = v;
-	p[0] = v;
+	*p = v;
 }
 
 int main(int argc, char *argv[], char *envp[])
