@@ -42,7 +42,7 @@ int main(int argc, char *argv[], char *envp[])
 		printf("in case 1, p reassigned\n");
 
 		printf("WHAT IS NULL %d\n", NULL);
-		printf("%i", NULL ==p);
+		printf("%i", p);
 		setvalue(p, 0);
 		break;
 	case 2:
