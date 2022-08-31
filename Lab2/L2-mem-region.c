@@ -11,11 +11,11 @@
 char *rostr = "abcdefgh";
 int global[4];
 char initglobal[] = "1234567890";
+void addr2(void *a, char *b){
+};
 
 
 void addr(void *, char *);
-void addr2(void *a, char *b){
-};
 
 
 void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
