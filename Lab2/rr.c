@@ -25,7 +25,7 @@ int main(int argc, char *argv[], char *envp[])
 	if (argc > 1)
 	{
 
-		printf("first arg is %s", argv[1]);
+		printf("first arg value is %s\n", argv[1]);
 		choice = atoi(argv[1]);
 	}
 	else
