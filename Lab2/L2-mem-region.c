@@ -25,7 +25,9 @@ void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 	char local[32];
 	char *cPtr_after_local = (char *)malloc(sizeof(char) * 1);
 
+	addr(cPtr_before_local, "before_local cptr");
 	addr(local, "f():local");
+	addr(cPtr_after_local, "after_local cptr");
 
 	addr(&arg1, "f(arg1)");
 	addr(&arg2, "f(arg2)");
