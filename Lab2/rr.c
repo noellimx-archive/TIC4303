@@ -10,6 +10,8 @@ int glob = 42;
 
 void setvalue(char *p, char v)
 {
+
+	printf("--%c\n", v);
 	*p = v;
 }
 
@@ -29,7 +31,7 @@ int main(int argc, char *argv[], char *envp[])
 		break;
 	case 2:
 		p = hello;
-		setvalue(p, "World");
+		setvalue(p, 'W');
 		break;
 	case 3:
 		p = string;
