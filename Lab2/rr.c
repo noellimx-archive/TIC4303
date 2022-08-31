@@ -49,7 +49,7 @@ int main(int argc, char *argv[], char *envp[])
 	case 4:
 		p = 0;
 		printf("can reach here");
-		*p;
+		int ss = *p;
 		printf("cannot reach here");
 		// choice = *p;
 		break;
