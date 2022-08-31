@@ -14,6 +14,8 @@ char initglobal[] = "1234567890";
 
 
 void addr(void *, char *);
+void addr2(void *a, char *b){
+};
 
 
 void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
@@ -42,6 +44,7 @@ int main(int argc, char *argv[], char *envp[])
 	void *heap;
 
 	addr(addr, "addr of func addr");
+	addr(addr2, "addr of func addr2");
 	addr(main, "addr of func main");
 	addr(rostr, "addr of char array rostr"); // uses value of rostr
 	addr(&rostr, "addr of pointer to char array rostr");
