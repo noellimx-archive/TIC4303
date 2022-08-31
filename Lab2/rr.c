@@ -17,6 +17,8 @@ void setvalue(char *p, char v)
 	printf("--%c\n", *(p + 1));
 	printf("--%c\n", *(p + 2));
 	printf("--%c\n", *(p + 3));
+	printf("--%c\n", *(p + 4));
+	printf("--%c\n", *(p + 5));
 	// *p = v;
 	p[0] = v;
 }
