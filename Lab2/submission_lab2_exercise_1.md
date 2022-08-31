@@ -25,6 +25,14 @@ the runtime stack
 - heap and stack addresses start from different address space
 
 
+
+
+
+
+DECREASING STACK ADDRESS (HIGH ABOVE LOW BELOW)
+
+***callee stack***
+
 [local_variable]
 [arg1]
 [arg2]
@@ -32,3 +40,12 @@ the runtime stack
 [arg4]
 [arg5]
 [arg6]
+
+
+***caller stack***
+
+[local_variable]
+[arg1]
+[arg2]
+[arg3]
+
