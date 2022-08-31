@@ -20,7 +20,7 @@ Segmentation fault (core dumped)
 
 #### b
 
-Case 1 has an instruction ```p = 0;``` which reassigns p to 0. We can add ```printf("%p",NULL);``` at the start of main to observe that NULL value is also 0. That is, p is assigned to the NULL pointer. Also, address 0x00 is owned by the operating system, not the program. Invoking ```setvalue()```, program will attempt to dereference the NULL pointer ```p``` which is not owned by the program. Hence the segmentation fault.
+Case 1 has an instruction ```p = 0;``` which reassigns p to 0. We can add ```printf("%p",NULL);``` at the start of main to observe that NULL value is also 0. That is, p is assigned to the NULL pointer. Also, address 0x00 is owned by the operating system, not the program. Invoking ```setvalue()```, program will attempt to dereference the NULL pointer ```p``` which is not owned by the program. Also, since 0x00 does not point to any variable, assigning an r-value to ```*p``` is illogical. Hence the segmentation fault.
 
 
 ### 2
@@ -57,8 +57,14 @@ program returns 0
 ### 4
 
 #### a
-program returns 0
+Segmentation fault (core dumped)
 
 #### b
 
-```string``` is an array of element type ```char```. Unlike c-string, it is not null-terminated and elements are modifiable.
+```p``` is assigned to NULL, and dereferencing NULL is an undefined behavior (RHS value is undefined in the assignment to int ```choice```);
+
+### 5
+
+#### a
+
+#### b

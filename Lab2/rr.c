@@ -48,13 +48,13 @@ int main(int argc, char *argv[], char *envp[])
 		break;
 	case 4:
 		p = 0;
-		printf("can reach here");
-		int ss = *p;
-		printf("cannot reach here");
-		// choice = *p;
+		choice = *p;
 		break;
 	case 5:
 		p = (char *) &choice;
+
+		printf("%i", sizeof(char) == sizeof(int ));
+		printf("%i", sizeof(char *) == sizeof(int *));
 		setvalue(p, 5);
 		break;
 /**
