@@ -1,0 +1,40 @@
+addr of func addr      : 0x55e98d517229
+addr of func main      : 0x55e98d5172db
+addr of char array rostr : 0x55e98d518008
+addr of pointer to char array rostr : 0x55e98d51a020
+global                 : 0x55e98d51a040
+initglobal             : 0x55e98d51a010
+local                  : 0x7ffef87cbdc0
+heap from malloc(16)   : 0x55e98dc632b0
+f(arg1)                : 0x7ffef87cbd3c
+f(arg6)                : 0x7ffef87cbd28
+f():local              : 0x7ffef87cbd40
+argv[0], which is a char array : 0x7ffef87cc6fc
+envp[0], which is a char array : 0x7ffef87cc71d
+errno                  : 0x7f406c6214c0
+stdout                 : 0x7f406c61b6a0
+55e98d516000-55e98d517000 r--p 00000000 ca:01 518603                     /home/ubuntu/repos/TIC4303/Lab2/L2-mem-region-withoutnopie.out
+55e98d517000-55e98d518000 r-xp 00001000 ca:01 518603                     /home/ubuntu/repos/TIC4303/Lab2/L2-mem-region-withoutnopie.out
+55e98d518000-55e98d519000 r--p 00002000 ca:01 518603                     /home/ubuntu/repos/TIC4303/Lab2/L2-mem-region-withoutnopie.out
+55e98d519000-55e98d51a000 r--p 00002000 ca:01 518603                     /home/ubuntu/repos/TIC4303/Lab2/L2-mem-region-withoutnopie.out
+55e98d51a000-55e98d51b000 rw-p 00003000 ca:01 518603                     /home/ubuntu/repos/TIC4303/Lab2/L2-mem-region-withoutnopie.out
+55e98dc62000-55e98dc83000 rw-p 00000000 00:00 0                          [heap]
+7f406c42e000-7f406c450000 r--p 00000000 ca:01 3463                       /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f406c450000-7f406c5c8000 r-xp 00022000 ca:01 3463                       /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f406c5c8000-7f406c616000 r--p 0019a000 ca:01 3463                       /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f406c616000-7f406c61a000 r--p 001e7000 ca:01 3463                       /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f406c61a000-7f406c61c000 rw-p 001eb000 ca:01 3463                       /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f406c61c000-7f406c622000 rw-p 00000000 00:00 0 
+7f406c629000-7f406c62a000 r--p 00000000 ca:01 3457                       /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f406c62a000-7f406c64d000 r-xp 00001000 ca:01 3457                       /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f406c64d000-7f406c655000 r--p 00024000 ca:01 3457                       /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f406c656000-7f406c657000 r--p 0002c000 ca:01 3457                       /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f406c657000-7f406c658000 rw-p 0002d000 ca:01 3457                       /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f406c658000-7f406c659000 rw-p 00000000 00:00 0 
+7ffef87ac000-7ffef87cd000 rw-p 00000000 00:00 0                          [stack]
+7ffef87f5000-7ffef87f9000 r--p 00000000 00:00 0                          [vvar]
+7ffef87f9000-7ffef87fb000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+
+Memory Map from /proc/25516/maps
