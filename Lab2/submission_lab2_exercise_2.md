@@ -30,6 +30,33 @@ Segmentation fault (core dumped)
 
 #### b
 
-```p``` is assigned to ```hello``` which is a pointer to a string literal. String literals are static and not modifiable. 
+```p``` is assigned to ```hello``` which is a pointer to a string literal. String literals are static and not modifiable. That is, the character elements in ```hello``` cannot be replaced. However, reading/access is allowed. 
+
+```
+    *p = 'W'; // illegal, undefined behavior
+    printf("%c",*p); // legal
+```
 
 See[https://en.cppreference.com/w/c/language/string_literal](https://en.cppreference.com/w/c/language/string_literal)
+
+
+
+### 3
+
+#### a
+program returns 0
+
+#### b
+
+```string``` is an array of element type ```char```. Unlike c-string, it is not null-terminated and elements are modifiable.
+
+
+
+### 4
+
+#### a
+program returns 0
+
+#### b
+
+```string``` is an array of element type ```char```. Unlike c-string, it is not null-terminated and elements are modifiable.

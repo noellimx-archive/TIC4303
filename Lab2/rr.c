@@ -14,13 +14,13 @@ void setvalue(char *p, char v)
 	printf("--%c\n", v);
 	printf("--%p\n", p);
 	printf("--%c\n", *p);
-	printf("--%c\n", *(p + 10));
 	printf("--%c\n", *(p + 1));
 	printf("--%c\n", *(p + 2));
 	printf("--%c\n", *(p + 3));
 	printf("--%c\n", *(p + 4));
 	printf("--%c\n", *(p + 5));
 	// *p = v;
+	*p;
 	p[0] = v;
 }
 
