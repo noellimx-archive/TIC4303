@@ -11,12 +11,12 @@
 char *rostr = "abcdefgh";
 int global[4];
 char initglobal[] = "1234567890";
-void addr2(void *a, char *b){
-};
 
 
-void addr(void *, char *);
-
+void addr(void *ptr, char *s)
+{
+	printf("%-22s : %p\n", s, ptr);
+}
 
 void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 	   int arg7, int arg8)
@@ -37,14 +37,24 @@ void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 	addr(&arg5, "f(arg5)");
 	addr(&arg6, "f(arg6)");
 }
+void callthis2(){
+
+	int k = 1;
+	addr(&k, "callthis2 addr of k");
+
+}
+void callthis(){
+	int k = 1;
+	addr(&k, "callthis addr of k");
+	callthis2();
+}
 
 int main(int argc, char *argv[], char *envp[])
 {
 	char buf[256], local[16];
 	void *heap;
-
+	callthis();
 	addr(addr, "addr of func addr");
-	addr(addr2, "addr of func addr2");
 	addr(main, "addr of func main");
 	addr(rostr, "addr of char array rostr"); // uses value of rostr
 	addr(&rostr, "addr of pointer to char array rostr");
@@ -65,12 +75,8 @@ int main(int argc, char *argv[], char *envp[])
 	printf("\n\nMemory Map from /proc/%d/maps\n", getpid());
 	sprintf(buf, "cat /proc/%d/maps", getpid());
 	system(buf);
+
+
 	return 0;
 }
 
-
-
-void addr(void *ptr, char *s)
-{
-	printf("%-22s : %p\n", s, ptr);
-}

@@ -17,7 +17,7 @@ A hexidecimal digit represents 4 binary digits. i.e 0x7ffef87cc6fc == 0b01111111
 
 ## Which direction does the runtime stack grow?
 
-
+the runtime stack 
 
 
 # some other notes
@@ -25,7 +25,7 @@ A hexidecimal digit represents 4 binary digits. i.e 0x7ffef87cc6fc == 0b01111111
 - heap and stack addresses start from different address space
 
 
-[local]
+[local_variable]
 [arg1]
 [arg2]
 [arg3]
