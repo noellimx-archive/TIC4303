@@ -12,10 +12,9 @@ char *rostr = "abcdefgh";
 int global[4];
 char initglobal[] = "1234567890";
 
-void addr(void *ptr, char *s)
-{
-	printf("%-22s : %p\n", s, ptr);
-}
+
+void addr(void *, char *);
+
 
 void f(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6,
 	   int arg7, int arg8)
@@ -64,4 +63,11 @@ int main(int argc, char *argv[], char *envp[])
 	sprintf(buf, "cat /proc/%d/maps", getpid());
 	system(buf);
 	return 0;
+}
+
+
+
+void addr(void *ptr, char *s)
+{
+	printf("%-22s : %p\n", s, ptr);
 }
