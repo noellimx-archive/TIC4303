@@ -57,7 +57,7 @@ int main(int argc, char *argv[], char *envp[])
 
 		printf("s of int and char %i\n", sizeof(char) == sizeof(int ));
 		printf("s of pint and pchar %i\n", sizeof(char *) == sizeof(int *));
-		setvalue(p, 5);
+		setvalue(p, 256);
 		break;
 /**
 	case 6:
