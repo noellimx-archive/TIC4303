@@ -22,6 +22,8 @@ int main(int argc, char *argv[], char *envp[])
 	printf("no of args %d \n", argc);
 	if (argc > 1)
 	{
+
+		printf("first arg is %s", argv[1]) ;
 		choice = atoi(argv[1]);
 	}else {
 		printf("no choice specified\n");
