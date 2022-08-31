@@ -14,7 +14,8 @@ void setvalue(char *p, char v)
 	printf("--%c\n", v);
 	printf("--%p\n", p);
 	printf("--%c\n", *p);
-	*p = v;
+	// *p = v;
+	p[0] = v;
 }
 
 int main(int argc, char *argv[], char *envp[])
