@@ -40,7 +40,9 @@ int main(int argc, char *argv[], char *envp[])
 	case 1:
 		p = 0;
 		printf("in case 1, p reassigned\n");
-		setvalue(&p, 0);
+
+		printf("WHAT IS NULL %d\n", NULL);
+		setvalue(p, 0);
 		break;
 	case 2:
 		p = hello;
