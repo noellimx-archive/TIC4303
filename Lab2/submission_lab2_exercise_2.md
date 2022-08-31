@@ -66,5 +66,7 @@ Segmentation fault (core dumped)
 ### 5
 
 #### a
+program returns 0
 
 #### b
+First, observe ```printf("%i", sizeof(char *) == sizeof(int *));``` is 1, that is size of a char pointer and int pointer is the same. Size-wise, pointer type-cast is legal. Second, ```sizeof```
