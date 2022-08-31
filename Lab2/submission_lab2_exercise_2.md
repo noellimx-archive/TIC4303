@@ -24,3 +24,12 @@ Case 1 has an instruction ```p = 0;``` which reassigns p to 0. We can add ```pri
 
 
 ### 2
+
+#### a
+Segmentation fault (core dumped)
+
+#### b
+
+```p``` is assigned to ```hello``` which is a pointer to a string literal. String literals are static and not modifiable. 
+
+See[https://en.cppreference.com/w/c/language/string_literal](https://en.cppreference.com/w/c/language/string_literal)
