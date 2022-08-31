@@ -1,5 +1,5 @@
 /*
- * CS4239 
+ * CS4239
  * Lab 22 (c) Roland Yap
  */
 
@@ -15,14 +15,21 @@ void setvalue(char *p, char v)
 
 int main(int argc, char *argv[], char *envp[])
 {
-	char *p, *hello="world", string[]="1234";
+	char *p, *hello = "world", string[] = "1234";
 	int *q;
-	int choice=1;
+	int choice = 1;
 
-	if (argc > 1) choice=atoi(argv[1]);
+	if (argc > 1)
+	{
+		choice = atoi(argv[1]);
+	}else {
+		printf("no choice specified");
+		return 0;
+	}
 	printf("choice %d\n", choice);
 
-	switch (choice) {
+	switch (choice)
+	{
 	case 1:
 		p = 0;
 		setvalue(p, 0);
@@ -40,24 +47,23 @@ int main(int argc, char *argv[], char *envp[])
 		choice = *p;
 		break;
 	case 5:
-		p = (char *) &choice;
+		p = (char *)&choice;
 		setvalue(p, 5);
 		break;
-/**
-	case 6:
-		q = (int *) 0x400000;
-		printf("@%p = %x\n", q, *q);
-		break;
-	case 7:
-		p = (char *) 0x404040;
-		setvalue(p, 7);
-		break;
-**/
+		/**
+			case 6:
+				q = (int *) 0x400000;
+				printf("@%p = %x\n", q, *q);
+				break;
+			case 7:
+				p = (char *) 0x404040;
+				setvalue(p, 7);
+				break;
+		**/
 	case 8:
-		p = (char *) 0x400000000000;
+		p = (char *)0x400000000000;
 		setvalue(p, 8);
 		break;
 	}
 	return 0;
 }
-
