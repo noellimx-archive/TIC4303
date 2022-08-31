@@ -19,11 +19,12 @@ int main(int argc, char *argv[], char *envp[])
 	int *q;
 	int choice = 1;
 
+	printf("no of args %d \n", argc);
 	if (argc > 1)
 	{
 		choice = atoi(argv[1]);
 	}else {
-		printf("no choice specified");
+		printf("no choice specified\n");
 		return 0;
 	}
 	printf("choice %d\n", choice);
