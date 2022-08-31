@@ -41,12 +41,7 @@ int main(int argc, char *argv[], char *envp[])
 		break;
 	case 5:
 		p = (char *) &choice;
-
-
-
-		printf("s of int and char %i %i\n", sizeof(char), sizeof(int ));
-		printf("%i", sizeof(char *) == sizeof(int *));
-		setvalue(p, 256);
+		setvalue(p, 5);
 		break;
 /**
 	case 6:

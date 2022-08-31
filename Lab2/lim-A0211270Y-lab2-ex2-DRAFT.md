@@ -1,5 +1,11 @@
 
 
+/*
+ *	Name: NOEL LIM XIAN
+ *	Student Number: A0211270Y
+ *	Email: E0493357@u.nus.edu
+ */
+
 
 # Lab 2 Exercise 2 - Segmentation Fault in Linux
 
@@ -69,4 +75,14 @@ Segmentation fault (core dumped)
 program returns 0
 
 #### b
-First, observe ```printf("%i", sizeof(char *) == sizeof(int *));``` is 1, that is size of a char pointer and int pointer is the same. Size-wise, pointer type-cast is legal. Second, ```sizeof```
+First, observe ```printf("%i", sizeof(char *) == sizeof(int *));``` is 1 (true), that is size of a char pointer and int pointer is the same. Size-wise, pointer type-cast from ```int *``` to ```char *``` is legal. Second, ```sizeof(int) == 4``` and ```sizeof(char) == 1```. As long as we assign to ```*p``` an r-value that is within 1 byte (8-bits), the program will not complain. Otherwise, value will overflow.
+
+
+### 8
+
+#### a
+Segmentation fault (core dumped)
+
+#### b
+
+0x40000000 is not mapped in the program (program is not aware of the space region).
