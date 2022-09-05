@@ -1,0 +1,61 @@
+diff --git a/Lab1/sim-A0211422B-lab1-ex2_20220905.c b/Lab1/sim-A0211422B-lab1-ex2_20220905.c
+index 8ccd895..3442138 100644
+--- a/Lab1/sim-A0211422B-lab1-ex2_20220905.c
++++ b/Lab1/sim-A0211422B-lab1-ex2_20220905.c
+@@ -1,32 +1,33 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+-struct Node
+-{
++struct Node {
+ 	int data;
+-	struct Node *next;
++	struct Node* next;
+ };
+ 
+-void do_reverse(void)
+-{
++void do_reverse(void) {
+ 	int i, c;
+ 
+-	struct Node *head;
+-	head = NULL;
++	struct Node* head = (struct Node*) malloc(sizeof(struct Node));
++	struct Node* tail;
+ 
+-	for (i = 0; (c = getchar()) != '\n'; i++)
+-	{
+-
+-		struct Node *newNode;
+-		newNode = (struct Node *)malloc(sizeof(struct Node));
+-		newNode->data = c;
+-		newNode->next = head;
+-		head = newNode;
++	for (i=0; (c = getchar()) != '\n'; i++){
++		if (i == 0){
++			head->data = c;
++			head->next = NULL;
++			tail = head;
++		} else{
++			struct Node* newNode;
++			newNode = (struct Node*) malloc(sizeof(struct Node));
++			newNode->data = c;
++			newNode->next = head;
++			head = newNode;
++		}
+ 	}
+ 
+-	while (head != NULL)
+-	{
+-		struct Node *temp;
++	while (head != NULL){
++		struct Node* temp;
+ 		putchar(head->data);
+ 		temp = head;
+ 		head = head->next;
+@@ -34,3 +35,4 @@ void do_reverse(void)
+ 	}
+ 	putchar('\n');
+ }
++
