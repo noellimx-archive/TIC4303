@@ -15,7 +15,6 @@ static void impl(short potential_mutant, int always_long)
 
 int main(void)
 {
-
     printf("%d %d %d <- sizeof (int | short int | long int ) \n",sizeof(int), sizeof(short int), sizeof(long)); 
 
     // printf("%d %d\n", &FP, &impl);
