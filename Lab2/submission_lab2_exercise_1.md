@@ -9,6 +9,9 @@ Linux memory model
 
 A hexidecimal digit represents 4 binary digits. i.e 0x7ffef87cc6fc == 0b011111111111111011111000011111001100011011111100. It is much more human-readable to display in hex. Also, address bus sizes are usually in shifts of 8 bits which can be represented by 2 hexes.
 
+Page size -> in interval of 2 ^ (10x) bits
+[https://en.wikipedia.org/wiki/Page_(computer_memory)](https://en.wikipedia.org/wiki/Page_(computer_memory))
+
 ## What is “rostr”, and the difference with “&rostr”?
 
 ```rostr``` is the pointer to the char array. Also the address stores the first element in the array.
@@ -17,14 +20,13 @@ A hexidecimal digit represents 4 binary digits. i.e 0x7ffef87cc6fc == 0b01111111
 
 ## Which direction does the runtime stack grow?
 
-the runtime stack 
-
+the runtime stack
 
 DECREASING STACK ADDRESS (HIGH ABOVE LOW BELOW)
 
-***callee stack***
+***callee stack*** i.e 0x7fff52b1c600
 
-[local_variable]
+[local_variable] 
 [arg1]
 [arg2]
 [arg3]
@@ -33,7 +35,7 @@ DECREASING STACK ADDRESS (HIGH ABOVE LOW BELOW)
 [arg6]
 
 
-***caller stack***
+***caller stack*** i.e 0x7fff52b1c580
 
 [local_variable]
 [arg1]
