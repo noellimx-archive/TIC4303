@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
+#define NULL_TERMINATOR_SIZE 1
 /*
  *	Name: NOEL LIM XIAN
  *	Student Number: A0211270Y
@@ -24,7 +27,7 @@ void do_reverse(void)
 	p = (char *) malloc(sizeof(char) * to_allocate_capacity);
 	current_allocated_capacity = to_allocate_capacity;
 
-	int null_terminator_size = 1; // size of null-terminator
+
 
 	// size mulitplication factor;
 
@@ -36,7 +39,7 @@ void do_reverse(void)
 			p[buffered_size] = c;
 			buffered_size += 1;
 
-			if ((buffered_size + null_terminator_size) >= current_allocated_capacity){ // space reallocation criteria
+			if ((buffered_size + NULL_TERMINATOR_SIZE) >= current_allocated_capacity){ // space reallocation criteria
 
 				to_allocate_capacity = current_allocated_capacity * size_growth_factor;
 

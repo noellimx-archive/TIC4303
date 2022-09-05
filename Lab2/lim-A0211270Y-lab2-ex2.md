@@ -1,9 +1,10 @@
-Name: NOEL LIM XIAN
-Student Number: A0211270Y
-Email: E0493357@u.nus.edu
-Date: 31 AUGUST 2022
-
 # Lab 2 Exercise 2 - Segmentation Fault in Linux
+
+
+Name: NOEL LIM XIAN \
+Student Number: A0211270Y \
+Email: E0493357@u.nus.edu \
+Date: 31 AUGUST 2022
 
 ## Question for each part
 
