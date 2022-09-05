@@ -25,7 +25,7 @@ Case 1 has an instruction ```p = 0;``` which reassigns p to 0. We can add ```pri
 
 #### b-inclass)
 
-address not in mmap.
+address not in mmap. [mmap address at zero](https://yarchive.net/comp/linux/address_zero.html)
 
 ### 2
 
