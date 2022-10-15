@@ -52,9 +52,11 @@ int main(int argc, char *argv[], char *envp[])
 	printf("4: code_buf %p\n", code_buf);
 	printf("4: p %p\n", p);
 	printf("4: p - code_buf %ld\n", (long int)p - (long int) code_buf);
-	printf("4: after reassign *((char *) code_buf) %d\n", *((char *) code_buf));
 
 	*((char *) code_buf) = 0xc3;
+
+	printf("4: after reassign *((char *) code_buf) %d\n", *((char *) code_buf));
+
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
 
