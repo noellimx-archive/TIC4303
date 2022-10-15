@@ -31,7 +31,7 @@ int main(int argc, char *argv[], char *envp[])
 	f = addnum;
 
 	printf("LINE1 f: %p\n", f);
-	printf("is addnum == f : %i", f == addnum);
+	printf("is addnum == f : %i\n", f == addnum);
 	a = f(10); // LINE1
 	printf("1: f(10)=%d f=%p\n\n", a, f);
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[], char *envp[])
 	memcpy(code_buf, addnum, L);
 	f = (int (*)(int)) code_buf;
 	printf("LINE2 f: %p\n", f);
-	printf("is addnum == f : %i", f == addnum);
+	printf("is addnum == f : %i\n", f == addnum);
 
 	a = f(10); // LINE2
 
