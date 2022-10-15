@@ -48,14 +48,13 @@ int main(int argc, char *argv[], char *envp[])
 	a = f(10); // LINE3
 	printf("3: f(10)=%d\n\n", a);
 
-	printf("4: before reassign *((char *) code_buf) %hhx\n", *((char *) code_buf));
 	printf("4: code_buf %p\n", code_buf);
 	printf("4: p %p\n", p);
 	printf("4: p - code_buf %ld\n", (long int)p - (long int) code_buf);
 
+	printf("4: before reassign *((char *) code_buf) 0x%hhx\n", *((char *) code_buf)); // *code_buf = 0xf3
 	*((char *) code_buf) = 0xc3;
-
-	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf));
+	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf)); // *code_buf = 0xf3
 
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
