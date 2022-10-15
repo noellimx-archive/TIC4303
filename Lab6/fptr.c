@@ -52,7 +52,8 @@ int main(int argc, char *argv[], char *envp[])
 
 	printf("f(10) = %d\n",f(10) );
 
-	p = index((char *) code_buf, 0xc3);
+	*((char *)code_buf) = 0xc3;
+
 
 	printf("LINE4 code_buf == p %i\n", code_buf == p);
 	printf("%p\n",p);
