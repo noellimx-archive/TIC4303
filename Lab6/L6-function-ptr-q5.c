@@ -21,7 +21,6 @@ int main(int argc, char *argv[], char *envp[])
 	int a, (*f)(int), *code_buf;
 	char *p, data[]={0x0f, 0x0b};
 	
-	printf("sizeof(int) %d sizeof(char) %d\n", sizeof(int), sizeof(char));
 	/* Try uncommenting out */
 	/*
 	f = NULL;
@@ -44,35 +43,14 @@ int main(int argc, char *argv[], char *envp[])
 
 	p = index((char *) code_buf, 0xff);
 	printf("before *p=%hhx\n", *p);
-	*p = 99;
+	*p = 100;
 	printf("after *p=%hhx\n", *p);
 	a = f(10); // LINE3
 	printf("3: f(10)=%d\n\n", a);
 
-	printf("4: code_buf %p\n", code_buf);
-	printf("4: p %p\n", p);
-	printf("4: p - code_buf %ld\n", (long int)p - (long int) code_buf);
-	printf("4: code_buf + 1 %p\n", ((char *) code_buf) + 1 * sizeof(char));
-
-	printf("4: before reassign *((char *) code_buf) 0x%hhx\n", *((char *) code_buf)); // *code_buf = 0xf3
-	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 1 * sizeof(char))); 
-	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 2* sizeof(char))); 
-	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 3* sizeof(char))); 
 	*((char *) code_buf) = 0xc3;
-	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf)); // *code_buf = 0xc3
-	printf("4: after reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 1* sizeof(char))); 
-	printf("4: after reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 2* sizeof(char))); 
-	printf("4: after reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 3* sizeof(char))); 
-
-
-	printf("4: f(10)=%d\n\n", a);
-	printf("4: f(10)=%hhx \n\n", a);
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
-	printf("4: f(10)=%hhx \n\n", a);
-	printf("4: char f(10)=%hhx \n\n", (char) a);
-	printf("4: char + 1 f(10)=%hhx \n\n", *((char *)&a) + 1 * sizeof(char));
-	printf("4: p=%d \n\n", *(int *)(((char *) code_buf) + 1 * sizeof(char)));
 
 	memcpy(code_buf, data, 2);
 	printf("before last call\n");
