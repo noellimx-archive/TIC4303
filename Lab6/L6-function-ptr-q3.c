@@ -34,9 +34,9 @@ int main(int argc, char *argv[], char *envp[])
 	a = f(10); // LINE1
 	printf("1: f(10)=%d f=%p\n\n", a, f);
 
-	// code_buf = (int *) mmap(0, 4096, PROT_EXEC|PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
+	code_buf = (int *) mmap(0, 4096, PROT_EXEC|PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
 	/* Try swapping the two mmap lines */
-	code_buf = (int *) mmap(0, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
+	// code_buf = (int *) mmap(0, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
 	printf("code_buf %p\n", code_buf);
 	char buf[256];
 
