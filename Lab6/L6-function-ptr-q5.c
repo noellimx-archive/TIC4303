@@ -44,7 +44,7 @@ int main(int argc, char *argv[], char *envp[])
 
 	p = index((char *) code_buf, 0xff);
 	printf("before *p=%hhx\n", *p);
-	*p = 100;
+	*p = 99;
 	printf("after *p=%hhx\n", *p);
 	a = f(10); // LINE3
 	printf("3: f(10)=%d\n\n", a);
