@@ -64,8 +64,8 @@ int main(int argc, char *argv[], char *envp[])
 
 	
 	printf("LINE4 code_buf == p %i", code_buf == p);
-	printf("%p",p);
-	printf("%p", code_buf);
+	printf("%p\n",p);
+	printf("%p\n", code_buf);
 	printf("f(10) = %d\n",f(10) );
 
 	// int iii[] = {1,2,3};
