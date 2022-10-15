@@ -56,7 +56,7 @@ int main(int argc, char *argv[], char *envp[])
 
 	printf("4: before reassign *((char *) code_buf) 0x%hhx\n", *((char *) code_buf)); // *code_buf = 0xf3
 	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 1 * sizeof(char))); 
-	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 2* sizeof(char)); 
+	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 2* sizeof(char))); 
 	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 3* sizeof(char))); 
 	*((char *) code_buf) = 0xc3;
 	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf)); // *code_buf = 0xc3
