@@ -62,7 +62,7 @@ int main(int argc, char *argv[], char *envp[])
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
 	printf("4: f(10)=%hhx \n\n", a);
-	printf("4: p=%d \n\n", *(int *) p);
+	printf("4: p=%d \n\n", *(((char *) code_buf) + 1));
 
 	memcpy(code_buf, data, 2);
 	printf("before last call\n");
