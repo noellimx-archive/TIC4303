@@ -43,6 +43,7 @@ int main(int argc, char *argv[], char *envp[])
 	f = (int (*)(int)) code_buf;
 	printf("LINE2 f: %p\n", f);
 	printf("is addnum == f : %i\n", f == addnum);
+	printf("is code_buf == f : %i\n", f == code_buf);
 
 	a = f(10); // LINE2
 
