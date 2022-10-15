@@ -48,7 +48,7 @@ int main(int argc, char *argv[], char *envp[])
 	a = f(10); // LINE3
 	printf("3: f(10)=%d\n\n", a);
 
-	*((char *) code_buf) = 0x00;
+	*((char *) code_buf) = 0x99;
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
 
