@@ -41,9 +41,9 @@ int main(int argc, char *argv[], char *envp[])
 	a = f(10); // LINE2
 	printf("2: f(10)=%d f=%p\n\n", a, f);
 
-	p = index((char *)code_buf, 0xfe);
+	p = index((char *)code_buf, 0xff);
 	printf("before *p=%hhx\n", *p);
-	*p = 100;
+	*p = 1000000;
 	printf("after *p=%hhx\n", *p);
 	a = f(10); // LINE3
 	printf("3: f(10)=%d\n\n", a);
