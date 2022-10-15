@@ -61,7 +61,11 @@ int main(int argc, char *argv[], char *envp[])
 
 	int bar (int );
 	memcpy(code_buf,bar,L  ) ;
+
+	
 	printf("LINE4 code_buf == p %i", code_buf == p);
+	printf("%p",p);
+	printf("%p", code_buf);
 	printf("f(10) = %d\n",f(10) );
 
 	// int iii[] = {1,2,3};
