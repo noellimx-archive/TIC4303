@@ -49,6 +49,8 @@ int main(int argc, char *argv[], char *envp[])
 	printf("3: f(10)=%d\n\n", a);
 
 	printf("4: before reassign *((char *) code_buf) %d\n", *((char *) code_buf));
+	printf("4: code_buf %p\n", code_buf);
+	printf("4: p %p\n", p);
 	*((char *) code_buf) = 0xc3;
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
