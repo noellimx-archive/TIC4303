@@ -38,6 +38,7 @@ int main(int argc, char *argv[], char *envp[])
 	/* Try swapping the two mmap lines */
 	code_buf = (int *) mmap(0, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
 	printf("code_buf %p\n", code_buf);
+	char buf[256];
 
 	printf("\n\nMemory Map from /proc/%d/maps\n", getpid());
 	sprintf(buf, "cat /proc/%d/maps", getpid());
