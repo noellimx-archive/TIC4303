@@ -54,8 +54,11 @@ int main(int argc, char *argv[], char *envp[])
 	printf("4: p - code_buf %ld\n", (long int)p - (long int) code_buf);
 
 	printf("4: before reassign *((char *) code_buf) 0x%hhx\n", *((char *) code_buf)); // *code_buf = 0xf3
+	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 1)); 
+	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 2)); 
+	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 3)); 
 	*((char *) code_buf) = 0xc3;
-	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf)); // *code_buf = 0xf3
+	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf)); // *code_buf = 0xc3
 
 	printf("4: f(10)=%d\n\n", a);
 	printf("4: f(10)=%hhx \n\n", a);
