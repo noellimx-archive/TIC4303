@@ -27,6 +27,7 @@ int main(int argc, char *argv[], char *envp[])
 	f = NULL;
 
 
+	char buf[256];
 
 	printf("\n\nMemory Map from /proc/%d/maps\n", getpid());
 	sprintf(buf, "cat /proc/%d/maps", getpid());
@@ -36,7 +37,6 @@ int main(int argc, char *argv[], char *envp[])
 	a = f(10);
 	printf("0: f(10)=%d f=%p\n\n", a, f);
 
-	char buf[256];
 
 
 	/* Try uncommenting out */
