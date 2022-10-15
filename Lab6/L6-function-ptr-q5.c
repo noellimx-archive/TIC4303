@@ -70,6 +70,7 @@ int main(int argc, char *argv[], char *envp[])
 	printf("4: f(10)=%d\n\n", a);
 	printf("4: f(10)=%hhx \n\n", a);
 	printf("4: char f(10)=%hhx \n\n", (char) a);
+	printf("4: char + 1 f(10)=%hhx \n\n", *((char *)&a) + 1);
 	printf("4: p=%d \n\n", *(int *)(((char *) code_buf) + 1));
 
 	memcpy(code_buf, data, 2);
