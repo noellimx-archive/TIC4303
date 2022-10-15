@@ -3,6 +3,7 @@
         "*.rmd": "markdown",
         "filesystem": "c",
         "cstdio": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "stdio.h": "c"
     }
 }
