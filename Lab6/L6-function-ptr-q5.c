@@ -59,12 +59,17 @@ int main(int argc, char *argv[], char *envp[])
 	printf("4: before reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 3)); 
 	*((char *) code_buf) = 0xc3;
 	printf("4: after reassign *((char *) code_buf) %hhx\n", *((char *) code_buf)); // *code_buf = 0xc3
+	printf("4: after reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 1)); 
+	printf("4: after reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 2)); 
+	printf("4: after reassign *((char *) code_buf) + 1 0x%hhx\n", *(((char *) code_buf) + 3)); 
+
 
 	printf("4: f(10)=%d\n\n", a);
 	printf("4: f(10)=%hhx \n\n", a);
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
 	printf("4: f(10)=%hhx \n\n", a);
+	printf("4: char f(10)=%hhx \n\n", (char) a);
 	printf("4: p=%d \n\n", *(int *)(((char *) code_buf) + 1));
 
 	memcpy(code_buf, data, 2);
