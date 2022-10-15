@@ -21,6 +21,7 @@ int main(int argc, char *argv[], char *envp[])
 	int a, (*f)(int), *code_buf;
 	char *p, data[]={0x0f, 0x0b};
 	
+	printf("sizeof(int) %d sizeof(char) %d", sizeof(int), sizeof(char));
 	/* Try uncommenting out */
 	/*
 	f = NULL;
