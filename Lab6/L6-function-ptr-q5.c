@@ -20,7 +20,7 @@ int main(int argc, char *argv[], char *envp[])
 {
 	int a, (*f)(int), *code_buf;
 	char *p, data[]={0x0f, 0x0b};
-	
+	int *i;
 	/* Try uncommenting out */
 	/*
 	f = NULL;
@@ -42,15 +42,18 @@ int main(int argc, char *argv[], char *envp[])
 	printf("2: f(10)=%d f=%p\n\n", a, f);
 
 	p = index((char *) code_buf, 0xff);
+	i = (int *) p;
 	printf("before *p=%hhx\n", *p);
 	*p = 100;
 	printf("after *p=%hhx\n", *p);
 	a = f(10); // LINE3
 	printf("3: f(10)=%d\n\n", a);
 
-	*((char *) code_buf) = 0xc3;
+	// *((char *) code_buf) = 0xc3;
+
 	a = f(10); // LINE4
 	printf("4: f(10)=%d\n\n", a);
+	printf("4: f(10)=%p\n\n", a);
 
 	memcpy(code_buf, data, 2);
 	printf("before last call\n");
