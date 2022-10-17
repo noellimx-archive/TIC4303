@@ -97,8 +97,6 @@ _main:                                  ## @main
 	leaq	L_.str.5(%rip), %rdi
 	movb	$0, %al
 	callq	_printf
-	movq	-48(%rbp), %rax
-	movb	$-61, (%rax)
 	movl	$10, %edi
 	callq	*-40(%rbp)
 	movl	%eax, -28(%rbp)
