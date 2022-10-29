@@ -35,6 +35,8 @@ int f()
   // printf("string = [%s]\n", buf);
   // LINE2
 
+  b[1] = 'a';
+
   printf("d\n");
   printbytes(&d, 0, 0);
   printf("c\n");
