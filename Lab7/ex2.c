@@ -28,6 +28,7 @@ int f()
 
   printf("%s %c\n", buf, c);
   printbytes(buf, 0, 8);
+  buf[8] = 'a';
   // buf[9] = 'a';
   // buf[10] = 'b';
   // printf("%s %c\n", buf, c);
