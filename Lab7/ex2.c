@@ -27,7 +27,7 @@ int f()
   char canaryend = 0;
 
   printf("%s %c\n", buf, c);
-  buf[8] = 'a';
+  printbytes(buf)
   // buf[9] = 'a';
   // buf[10] = 'b';
   // printf("%s %c\n", buf, c);
