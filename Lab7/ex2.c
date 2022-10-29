@@ -25,7 +25,7 @@ int f()
   char buf[8];
   char c;
   char canaryend = 0;
-
+  c = 'z';
   printf("%s %c\n", buf, c);
   printbytes(buf, 0, 8);
   buf[8] = 'a';
@@ -38,6 +38,9 @@ int f()
   printf("%s\n", buf);
 
   printbytes(buf, 0, 9);
+
+  printf("%c\n", c);
+
 
 
   // LINE1 - don't change code from LINE1 to LINE2
