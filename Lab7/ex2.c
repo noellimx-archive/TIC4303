@@ -20,6 +20,8 @@ void cookie_error() // call when error detected
 
 int f()
 {
+
+  char k;
   char buf[8];
   char c;
 
@@ -36,7 +38,7 @@ int f()
   printf("string = [%s]\n", buf);
   */
   // LINE2
-  printf("buf, a, b, c %p %p %p %p\n", &buf, &c, &a, &b);
+  printf("k, buf, a, b, c %p %p %p %p\n", &k,&buf, &c, &a, &b);
   return 0;
 }
 
