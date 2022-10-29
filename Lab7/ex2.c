@@ -35,17 +35,17 @@ int f()
   // printf("string = [%s]\n", buf);
   // LINE2
 
-  printf("d");
+  printf("d\n");
   printbytes(&d, 0, 0);
-  printf("c");
+  printf("c\n");
 
   printbytes(&c, 0, 0);
-  printf("buf");
+  printf("buf\n");
 
   printbytes(buf, 0, 10);
-  printf("b");
+  printf("b\n");
 
-  printbytes(b, 0, 0);
+  printbytes(b, 0, 1);
 
 
   return 0;
