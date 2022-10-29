@@ -27,13 +27,13 @@ int f()
   char canaryend = 0;
   c = 'z';
   printf("%s %c\n", buf, c);
-  printbytes(buf, 0, 8);
+  printbytes(buf, 0, 9);
   buf[8] = 'a';
   buf[7] = 'a';
   // buf[9] = 'a';
   // buf[10] = 'b';
   // printf("%s %c\n", buf, c);
-  printbytes(buf, 0, 8);
+  printbytes(buf, 0, 9);
 
   printf("%s\n", buf);
 
