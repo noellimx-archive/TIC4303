@@ -20,6 +20,8 @@ void cookie_error() // call when error detected
 
 int f()
 {
+
+  char d;
   char buf[8]; 
   char c;
 
@@ -29,9 +31,11 @@ int f()
   buf[i] = '\0';
   // printf("string = [%s]\n", buf);
   // LINE2
-  printbytes(buf, 0, 10);
+  printbytes(&d, 0, 0);
 
   printbytes(&c, 0, 0);
+  printbytes(buf, 0, 10);
+
 
   return 0;
 }
