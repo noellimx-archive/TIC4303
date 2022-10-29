@@ -29,7 +29,7 @@ int f()
   buf[i] = '\0';
   printf("string = [%s]\n", buf);
   // LINE2
-  printf("c, buf[i] %p &p\n", c, &buf[i]);
+  printf("c, buf[i] %d %d \n", &c, &buf[i]);
   return 0;
 }
 
