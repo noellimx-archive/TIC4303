@@ -26,7 +26,7 @@ int f()
   char c;
 
 
-  char *b;
+  char b[0];
 
   // LINE1 - don't change code from LINE1 to LINE2 
   printf("Enter a string: ");
