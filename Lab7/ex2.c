@@ -25,6 +25,9 @@ int f()
   char buf[8]; 
   char c;
 
+
+  char *b;
+
   // LINE1 - don't change code from LINE1 to LINE2 
   printf("Enter a string: ");
   for (i = 0; (c = getchar()) != '\n'; i++) buf[i] = c;
@@ -35,6 +38,7 @@ int f()
 
   printbytes(&c, 0, 0);
   printbytes(buf, 0, 10);
+  printbytes(b, 0, 0);
 
 
   return 0;
