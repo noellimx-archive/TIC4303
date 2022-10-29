@@ -29,6 +29,9 @@ int f()
   buf[i] = '\0';
   // printf("string = [%s]\n", buf);
   // LINE2
+  printbytes(&buf, 0, 10);
+
+  printbytes(&c, 0, 0);
 
   return 0;
 }
