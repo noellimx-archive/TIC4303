@@ -38,7 +38,7 @@ int f()
   printf("string = [%s]\n", buf);
   */
   // LINE2
-  printf("k, buf, a, b, c %p %p %p %p\n", &k,&buf, &c, &a, &b);
+  printf("k, buf, a, b, c %p %p %p %p %p\n", &k,&buf, &c, &a, &b);
   return 0;
 }
 
