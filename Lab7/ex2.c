@@ -34,10 +34,17 @@ int f()
   buf[i] = '\0';
   // printf("string = [%s]\n", buf);
   // LINE2
+
+  printf("d");
   printbytes(&d, 0, 0);
+  printf("c");
 
   printbytes(&c, 0, 0);
+  printf("buf");
+
   printbytes(buf, 0, 10);
+  printf("b");
+
   printbytes(b, 0, 0);
 
 
