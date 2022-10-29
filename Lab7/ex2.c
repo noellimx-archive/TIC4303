@@ -32,6 +32,7 @@ int f()
   // buf[9] = 'a';
   // buf[10] = 'b';
   // printf("%s %c\n", buf, c);
+  printf("%s\n", buf);
 
   // LINE1 - don't change code from LINE1 to LINE2
 
