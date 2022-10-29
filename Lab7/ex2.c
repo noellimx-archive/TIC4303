@@ -21,12 +21,10 @@ void cookie_error() // call when error detected
 int f()
 {
 
-  char k;
+  char canarystart = 0;
   char buf[8];
   char c;
-
-  int a;
-  char b[2];
+  char canaryend = 0;
 
   // LINE1 - don't change code from LINE1 to LINE2
 
@@ -38,7 +36,7 @@ int f()
   printf("string = [%s]\n", buf);
   */
   // LINE2
-  printf("k, buf, a, b, c %p %p %p %p %p\n", &k,&buf, &c, &a, &b);
+  printf("start ... end %p %p %p %p\n", &canarystart ,&buf, &c, &canaryend);
   return 0;
 }
 
