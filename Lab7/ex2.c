@@ -37,6 +37,9 @@ int f()
 
   printf("%s\n", buf);
 
+  printbytes(buf, 0, 9);
+
+
   // LINE1 - don't change code from LINE1 to LINE2
 
   /*
