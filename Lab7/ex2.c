@@ -27,13 +27,15 @@ int f()
   char b[2];
 
   // LINE1 - don't change code from LINE1 to LINE2
+
+  /*
   printf("Enter a string: ");
   for (i = 0; (c = getchar()) != '\n'; i++)
     buf[i] = c;
   buf[i] = '\0';
   printf("string = [%s]\n", buf);
+  */
   // LINE2
-  printf("c, buf[i] %p %p %p\n", &c, buf + 8, &a);
   printf("buf, a, b, c %p %p %p %p\n", &buf, &c, &a, &b);
   return 0;
 }
