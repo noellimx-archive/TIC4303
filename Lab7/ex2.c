@@ -23,13 +23,17 @@ int f()
   char buf[8]; 
   char c;
 
+  int a;
+
+
+
   // LINE1 - don't change code from LINE1 to LINE2 
   printf("Enter a string: ");
   for (i = 0; (c = getchar()) != '\n'; i++) buf[i] = c;
   buf[i] = '\0';
   printf("string = [%s]\n", buf);
   // LINE2
-  printf("c, buf[i] %p %p \n", &c, buf + 8);
+  printf("c, buf[i] %p %p %p\n", &c, buf + 8, &a);
   return 0;
 }
 
