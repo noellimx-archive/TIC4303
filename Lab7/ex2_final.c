@@ -32,7 +32,7 @@ int f()
   /*
     1.  Open "/dev/urandom" in read mode and assign the new FILE pointer from fopen() to fp.
         This should be the first memory allocation instruction in the stack to prevent interjection of the order of variables in this exercise.
-        We get data "/dev/urandom" for the canary value so that we have random values in each execution (harder for attacker to predict runtime, probablistic value)
+        We get data "/dev/urandom" for the canary value so that we have random values in each execution (harder for attacker to predict runtime, arbitrary value)
   */
   FILE *fp = fopen("/dev/urandom", "r");
 
