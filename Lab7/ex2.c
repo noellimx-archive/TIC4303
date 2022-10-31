@@ -20,8 +20,7 @@ void cookie_error() // call when error detected
 
 FILE *fp;
 
-
-// Some of the 
+// Some of the
 int f()
 {
   fp = fopen("/dev/urandom", "r");
@@ -29,14 +28,13 @@ int f()
   char canary_value[8];
   char buf[8];
   char postbuf[8];
-  if my_protect
-    == 1
-    {
-      fread(&canary_value, 1, 8, fp);
-
-      while p < 8
-        postbuf[p] = canary_value[p++];
-    }
+  if (
+      my_protect == 1)
+  {
+    fread(&canary_value, 1, 8, fp);
+    while (p < 8)
+      postbuf[p] = canary_value[p++];
+  }
   char c;
 
   printf("postbuf\n");
@@ -75,7 +73,7 @@ int main(int argc, char *argv[])
   if (argc > 1 && strcmp(argv[1], "-p") == 0)
     my_protect = 1;
 
-  printf("...my_protect %d\n", my_protect)
-      printf("f = %p\n", (void *)do_not_call); // leak
+  printf("...my_protect %d\n", my_protect);
+  printf("f = %p\n", (void *)do_not_call); // leak
   return f();
 }
