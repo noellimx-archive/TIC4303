@@ -38,7 +38,8 @@ int f()
 
   }
   char c;
-
+  printf("canaryvalue\n");
+  printbytes(canary_value, 0, 7);
   printf("canary\n");
   printbytes(canary, 0, 7);
 
