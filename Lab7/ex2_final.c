@@ -97,7 +97,7 @@ int f()
 
     for (int p = 0; p < CANARY_SIZE; p++)
     {
-      if ((canary[p] ^ canary_value[p]) != 0)
+      if (canary[p] != canary_value[p])
       {
         cookie_error();
       }
