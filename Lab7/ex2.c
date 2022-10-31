@@ -23,21 +23,27 @@ FILE *fp;
 // Some of the
 int f()
 {
+
+#define CANARY_SIZE 8
   fp = fopen("/dev/urandom", "r");
 
-  char canary_value[8];
+  char canary_value[CANARY_SIZE];
   char buf[8];
-  char canary[8];
+  char canary[CANARY_SIZE];
+  char c;
+
   if (
       my_protect == 1)
   {
-    int p = fread(&canary_value, 1, 8, fp);
-
+    int p = fread(&canary_value, 1, CANARY_SIZE, fp);
+    if (p != CANARY_SIZE)
+    {
+      fprintf(stderr, "reading from /dev/urandom deviates from CANARY_SIZE \n");
+      exit(1);
+    }
     while (--p >= 0)
       canary[p] = canary_value[p];
-
   }
-  char c;
   printf("canaryvalue\n");
   printbytes(canary_value, 0, 7);
   printf("canary\n");
@@ -56,6 +62,16 @@ int f()
 
   printf("canary\n");
   printbytes(canary, 0, 7);
+
+  if (my_protect == 1)
+  {
+
+    for(int p = 0; p < CANARY_SIZE; p++){
+      if (canary[p] != canary_value[p]){
+        cookie_error();
+      }
+    }
+  }
 
   fclose(fp);
 
