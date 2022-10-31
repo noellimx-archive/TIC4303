@@ -17,14 +17,24 @@ void cookie_error() // call when error detected
   exit(1);
 }
 
+FILE *fp;
 
 int f()
 {
-
   char d;
-  char prebuf[8];
+  char prebuf[1];
+
+  fp = fopen("/dev/urandom", "r");
+  fread(&prebuf, 1, 1, fp);
+  fclose(fp);
   char buf[8]; 
-  char postbuf[8];
+  char postbuf[1];
+
+  char buf[8]; 
+
+  fp = fopen("/dev/urandom", "r");
+  fread(&buf, 1, 1, fp);
+  fclose(fp);
   char c;
 
 
@@ -37,27 +47,14 @@ int f()
   // printf("string = [%s]\n", buf);
   // LINE2
 
-  // b[1] = 'a';
-
-  printf("d\n");
-  printbytes(&d, 0, 0);
-
-  printf("c\n");
-  printbytes(&c, 0, 0);
-
   printf("prebuf\n");
-  printbytes(prebuf, 0, 10);
+  printbytes(prebuf, 0, 1);
 
   printf("buf\n");
-  printbytes(buf, 0, 10);
+  printbytes(buf, 0, 8);
   
   printf("postbuf\n");
-  printbytes(postbuf, 0, 10);
-
-
-  printf("b\n");
-  printbytes(b, 0, 1);
-
+  printbytes(postbuf, 0, 1);
 
   return 0;
 }

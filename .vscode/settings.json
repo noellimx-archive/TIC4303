@@ -3,6 +3,11 @@
         "*.rmd": "markdown",
         "filesystem": "c",
         "cstdio": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "array": "c",
+        "iterator": "c",
+        "string": "c",
+        "string_view": "c",
+        "vector": "c"
     }
 }
