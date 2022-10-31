@@ -8,7 +8,8 @@ int i;
 
 void printbytes(char *p, int j, int k) // only for convenience, not needed
 {
-  for (; j <= k; j++) printf("%02d: %p : %02hhx\n", j, p+j, p[j]);
+  for (; j <= k; j++)
+    printf("%02d: %p : %02hhx\n", j, p + j, p[j]);
 }
 
 void cookie_error() // call when error detected
@@ -19,35 +20,43 @@ void cookie_error() // call when error detected
 
 FILE *fp;
 
+
+// Some of the 
 int f()
 {
   fp = fopen("/dev/urandom", "r");
 
-
-
-  char buf[8]; 
+  char canary_value[8];
+  char buf[8];
   char postbuf[8];
-  fread(&postbuf, 1, 8, fp);
-  fclose(fp);
+  if my_protect
+    == 1
+    {
+      fread(&canary_value, 1, 8, fp);
+
+      while p < 8
+        postbuf[p] = canary_value[p++];
+    }
   char c;
 
   printf("postbuf\n");
   printbytes(postbuf, 0, 7);
 
-  // LINE1 - don't change code from LINE1 to LINE2 
+  // LINE1 - don't change code from LINE1 to LINE2
   printf("Enter a string: ");
-  for (i = 0; (c = getchar()) != '\n'; i++) buf[i] = c;
+  for (i = 0; (c = getchar()) != '\n'; i++)
+    buf[i] = c;
   buf[i] = '\0';
   // printf("string = [%s]\n", buf);
   // LINE2
 
-
-
   printf("buf\n");
   printbytes(buf, 0, 7);
-  
+
   printf("postbuf\n");
   printbytes(postbuf, 0, 7);
+
+  fclose(fp);
 
   return 0;
 }
@@ -63,10 +72,10 @@ int main(int argc, char *argv[])
   setvbuf(stdout, 0, _IONBF, 0); // use unbuffered I/O to simplify things
   setvbuf(stdin, 0, _IONBF, 0);
   setvbuf(stderr, 0, _IONBF, 0);
-  if (argc > 1 && strcmp(argv[1], "-p")==0)
+  if (argc > 1 && strcmp(argv[1], "-p") == 0)
     my_protect = 1;
-  
-  printf("f = %p\n", (void *) do_not_call); // leak
+
+  printf("...my_protect %d\n", my_protect)
+      printf("f = %p\n", (void *)do_not_call); // leak
   return f();
 }
-
