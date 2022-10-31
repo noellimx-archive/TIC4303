@@ -28,8 +28,8 @@ int f()
   char prebuf[8];
   char buf[8]; 
   char postbuf[8];
-  fread(&prebuf, 1, 1, fp);
-  fread(&postbuf, 1, 1, fp);
+  fread(&prebuf, 1, 8, fp);
+  fread(&postbuf, 1, 8, fp);
   fclose(fp);
   char c;
 
@@ -44,13 +44,13 @@ int f()
   // LINE2
 
   printf("prebuf\n");
-  printbytes(prebuf, 0, 1);
+  printbytes(prebuf, 0, 7);
 
   printf("buf\n");
-  printbytes(buf, 0, 8);
+  printbytes(buf, 0, 7);
   
   printf("postbuf\n");
-  printbytes(postbuf, 0, 1);
+  printbytes(postbuf, 0, 7);
 
   return 0;
 }
