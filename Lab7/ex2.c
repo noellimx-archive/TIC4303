@@ -83,7 +83,7 @@ int f()
   for (i = 0; (c = getchar()) != '\n'; i++)
     buf[i] = c;
   buf[i] = '\0';
-  // printf("string = [%s]\n", buf);
+  printf("string = [%s]\n", buf);
   // LINE2
 
   /*  4. If there is buffer overflow from the array buf, canary will change and differ from canary_value (the original value).

@@ -91,6 +91,7 @@ int f()
          We will compare each character of canary_value and canary.
          Upon detection of change, cookie_error is raised.
   */
+        cookie_error();
 
   if (my_protect == 1)
   {
