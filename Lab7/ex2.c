@@ -25,9 +25,9 @@ int f()
 
 
 
-  char prebuf[1];
+  char prebuf[8];
   char buf[8]; 
-  char postbuf[1];
+  char postbuf[8];
   fread(&prebuf, 1, 1, fp);
   fread(&postbuf, 1, 1, fp);
   fclose(fp);
