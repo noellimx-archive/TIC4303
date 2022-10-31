@@ -77,12 +77,14 @@ int f()
       canary[p] = canary_value[p];
   }
 
+  fclose(fp);
+
   // LINE1 - don't change code from LINE1 to LINE2
   printf("Enter a string: ");
   for (i = 0; (c = getchar()) != '\n'; i++)
     buf[i] = c;
   buf[i] = '\0';
-  // printf("string = [%s]\n", buf);
+  printf("string = [%s]\n", buf);
   // LINE2
 
   /*  4. If there is buffer overflow from the array buf, canary will change and differ from canary_value (the original value).
@@ -102,7 +104,6 @@ int f()
     }
   }
 
-  fclose(fp);
 
   return 0;
 }
