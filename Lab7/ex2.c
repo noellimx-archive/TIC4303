@@ -18,7 +18,6 @@ void cookie_error() // call when error detected
   exit(1);
 }
 
-FILE *fp;
 
 // EXERCISE 2
 // Only f is modified from lab7-ex1.c
@@ -32,10 +31,10 @@ int f()
 #define CANARY_SIZE 8
   /*
     1.  Open "/dev/urandom" in read mode and assign the new FILE pointer from fopen() to fp.
-        This should be the first memory allocation instruction in the stack to prevent interference in order of variables in the exercise.
+        This should be the first memory allocation instruction in the stack to prevent interjection of the order of variables in this exercise.
         We get data "/dev/urandom" for the canary value so that we have random values in each execution (harder for attacker to predict runtime, probablistic value)
   */
-  fp = fopen("/dev/urandom", "r");
+  FILE *fp = fopen("/dev/urandom", "r");
 
   /*
 
@@ -78,6 +77,8 @@ int f()
       canary[p] = canary_value[p];
   }
 
+  fclose(fp);
+
   // LINE1 - don't change code from LINE1 to LINE2
   printf("Enter a string: ");
   for (i = 0; (c = getchar()) != '\n'; i++)
@@ -96,14 +97,12 @@ int f()
 
     for (int p = 0; p < CANARY_SIZE; p++)
     {
-      if ((canary[p] ^ canary_value[p]) != 0)
+      if (canary[p] != canary_value[p])
       {
         cookie_error();
       }
     }
   }
-
-  fclose(fp);
 
   return 0;
 }
@@ -122,7 +121,6 @@ int main(int argc, char *argv[])
   if (argc > 1 && strcmp(argv[1], "-p") == 0)
     my_protect = 1;
 
-  printf("...my_protect %d\n", my_protect);
   printf("f = %p\n", (void *)do_not_call); // leak
   return f();
 }
