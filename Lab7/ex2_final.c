@@ -94,7 +94,6 @@ int f()
 
   if (my_protect == 1)
   {
-
     for (int p = 0; p < CANARY_SIZE; p++)
     {
       if (canary[p] != canary_value[p])
