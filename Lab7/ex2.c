@@ -31,13 +31,11 @@ int f()
   if (
       my_protect == 1)
   {
-    fread(&canary_value, 1, 8, fp);
+    int p = fread(&canary_value, 1, 8, fp);
 
-    for (int p = 0; p < 8 ; p++ ) {
+    while (--p != 0)
+      postbuf[p] = canary_value[p];
 
-      postbuf[p] = canary_value[p++];
-
-    }
   }
   char c;
 
