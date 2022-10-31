@@ -27,20 +27,20 @@ int f()
 
   char canary_value[8];
   char buf[8];
-  char postbuf[8];
+  char canary[8];
   if (
       my_protect == 1)
   {
     int p = fread(&canary_value, 1, 8, fp);
 
     while (--p >= 0)
-      postbuf[p] = canary_value[p];
+      canary[p] = canary_value[p];
 
   }
   char c;
 
-  printf("postbuf\n");
-  printbytes(postbuf, 0, 7);
+  printf("canary\n");
+  printbytes(canary, 0, 7);
 
   // LINE1 - don't change code from LINE1 to LINE2
   printf("Enter a string: ");
@@ -53,8 +53,8 @@ int f()
   printf("buf\n");
   printbytes(buf, 0, 7);
 
-  printf("postbuf\n");
-  printbytes(postbuf, 0, 7);
+  printf("canary\n");
+  printbytes(canary, 0, 7);
 
   fclose(fp);
 
