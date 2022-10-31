@@ -22,7 +22,9 @@ int f()
 {
 
   char d;
+  char prebuf[8];
   char buf[8]; 
+  char postbuf[8];
   char c;
 
 
@@ -39,14 +41,21 @@ int f()
 
   printf("d\n");
   printbytes(&d, 0, 0);
+
   printf("c\n");
-
   printbytes(&c, 0, 0);
+
+  printf("prebuf\n");
+  printbytes(prebuf, 0, 10);
+
   printf("buf\n");
-
   printbytes(buf, 0, 10);
-  printf("b\n");
+  
+  printf("postbuf\n");
+  printbytes(postbuf, 0, 10);
 
+
+  printf("b\n");
   printbytes(b, 0, 1);
 
 
