@@ -30,8 +30,6 @@ int f()
   char buf[8]; 
   char postbuf[1];
 
-  char buf[8]; 
-
   fp = fopen("/dev/urandom", "r");
   fread(&buf, 1, 1, fp);
   fclose(fp);
