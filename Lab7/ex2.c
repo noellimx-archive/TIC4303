@@ -21,17 +21,15 @@ FILE *fp;
 
 int f()
 {
-  char d;
-  char prebuf[1];
-
   fp = fopen("/dev/urandom", "r");
-  fread(&prebuf, 1, 1, fp);
-  fclose(fp);
+
+
+
+  char prebuf[1];
   char buf[8]; 
   char postbuf[1];
-
-  fp = fopen("/dev/urandom", "r");
-  fread(&buf, 1, 1, fp);
+  fread(&prebuf, 1, 1, fp);
+  fread(&postbuf, 1, 1, fp);
   fclose(fp);
   char c;
 
