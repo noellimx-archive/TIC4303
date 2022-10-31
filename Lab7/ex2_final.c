@@ -122,7 +122,6 @@ int main(int argc, char *argv[])
   if (argc > 1 && strcmp(argv[1], "-p") == 0)
     my_protect = 1;
 
-  printf("...my_protect %d\n", my_protect);
   printf("f = %p\n", (void *)do_not_call); // leak
   return f();
 }
