@@ -33,9 +33,11 @@ int f()
   {
     fread(&canary_value, 1, 8, fp);
 
-    int p = 0;
-    while (p < 8)
+    for (int p = 0; p < 8 ; p++ ) {
+
       postbuf[p] = canary_value[p++];
+
+    }
   }
   char c;
 
