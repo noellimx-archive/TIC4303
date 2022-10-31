@@ -25,16 +25,14 @@ int f()
 
 
 
-  char prebuf[8];
   char buf[8]; 
   char postbuf[8];
-  fread(&prebuf, 1, 8, fp);
   fread(&postbuf, 1, 8, fp);
   fclose(fp);
   char c;
 
-
-  char b[1];
+  printf("postbuf\n");
+  printbytes(postbuf, 0, 7);
 
   // LINE1 - don't change code from LINE1 to LINE2 
   printf("Enter a string: ");
@@ -43,8 +41,7 @@ int f()
   // printf("string = [%s]\n", buf);
   // LINE2
 
-  printf("prebuf\n");
-  printbytes(prebuf, 0, 7);
+
 
   printf("buf\n");
   printbytes(buf, 0, 7);
