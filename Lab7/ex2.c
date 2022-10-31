@@ -32,6 +32,8 @@ int f()
       my_protect == 1)
   {
     fread(&canary_value, 1, 8, fp);
+
+    int p = 0;
     while (p < 8)
       postbuf[p] = canary_value[p++];
   }
